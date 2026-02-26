@@ -2,152 +2,176 @@
 
 ## Overview
 
-Blockchain RPC Health Monitor is a Python-based continuous monitoring tool designed to track the operational health of multiple blockchain projects.
+Blockchain RPC Health Monitor is a Python-based monitoring tool designed to check the availability and responsiveness of blockchain RPC endpoints.
 
-It verifies:
+The script continuously monitors RPC nodes and ensures that they are operational and responding within acceptable time limits.
 
-- RPC endpoint availability  
-- Block synchronization progress  
-- API responsiveness  
-- P2P transaction functionality  
-
-The script runs continuously via CLI and triggers an audible alert (beep sound) if any monitored service becomes unavailable.
-
----
-
-## Module
-
-Utilities / Blockchain Infrastructure Monitoring
+It is useful for detecting downtime, slow responses, or connectivity failures in blockchain infrastructure.
 
 ---
 
 ## Problem Statement
 
-As a QA engineer, daily manual verification was required for multiple blockchain projects to ensure:
+Blockchain-based applications depend heavily on RPC endpoints for interacting with the network.
 
-- RPC endpoints were responding
-- Blocks were syncing correctly
-- APIs were functional
-- Transactions were being processed
+If an RPC node becomes unresponsive or slow, it can disrupt transactions, data retrieval, and overall system performance.
 
-This repetitive process consumed significant time and risked delayed detection of infrastructure failures.
+Manual monitoring is inefficient and unreliable.
+
+This tool automates RPC health checks and ensures early detection of failures.
 
 ---
 
 ## Purpose
 
-To automate real-time monitoring of blockchain infrastructure and instantly alert when any service disruption occurs.
+- Monitor RPC endpoint availability  
+- Detect downtime or response delay  
+- Improve infrastructure reliability  
+- Enable proactive issue resolution  
 
 ---
 
 ## Technical Stack
 
-- Python
-- CLI Execution
-- RPC API Calls
-- Block Height Validation APIs
-- Local Audible Alert System
+- Python  
+- Requests Library  
+- JSON-RPC  
+- Timeout Handling  
+- Retry Mechanism  
 
 ---
 
-## Projects Monitored
+## How It Works
 
-- 10+ blockchain projects
-- Multiple RPC endpoints
-- Block synchronization APIs
-- Transaction broadcast validation
-
----
-
-## Technical Flow
-
-1. Load predefined RPC and API endpoints.
-2. Send health-check requests.
-3. Validate:
-   - RPC response status
-   - Latest block height progression
-   - API responsiveness
-4. If a failure is detected:
-   - Retry up to 3 times
-   - Wait 2 minutes between each retry
-5. If all 3 retries fail:
-   - Trigger audible beep alert
-   - Log affected project name
-6. Continue monitoring loop.
+1. The script sends a JSON-RPC request to the configured blockchain endpoint.
+2. It waits for a response within a defined timeout.
+3. If the response is successful, the endpoint is marked healthy.
+4. If the request fails, the script retries up to 3 times.
+5. Each retry has a 2-minute interval gap.
+6. After all retries fail, the endpoint is marked as unhealthy.
 
 ---
 
-## Retry Mechanism
+## Configuration
 
-The script includes built-in retry handling to prevent false failure alerts.
+The script requires:
 
-- Maximum Retries: 3  
-- Retry Interval: 2 minutes  
-- Alert Trigger Condition: After all retries fail  
+- RPC URL  
+- Request payload (e.g., eth_blockNumber)  
+- Timeout duration  
+- Retry count (default: 3 retries)  
+- Retry delay (default: 2 minutes)  
 
-This ensures temporary network fluctuations do not generate false alarms.
-
----
-
-## Authentication
-
-No login or authentication is required.  
-All monitored endpoints are public RPC or API endpoints.
+No authentication or login is required for public RPC endpoints.
 
 ---
 
 ## Execution Guide
 
-Run from CLI:
-
-``
-
-
-Business Risk Covered
-
-Prevents unnoticed RPC downtime
-
-Detects block synchronization halts immediately
-
-Reduces delayed incident reporting
-
-Improves infrastructure reliability
-
-ROI (Return on Investment)
-
-Manual effort per day: ~30–45 minutes
-Projects monitored: 10+
-Estimated monthly time saved: 15+ hours
-
-Additionally reduces risk of delayed outage detection.
-
-Stability Level
-
-Highly stable for long-duration execution.
-Designed for continuous background monitoring.
-
-Limitations
-
-Runs locally (not cloud-based)
-
-Requires system to remain active
-
-No centralized logging dashboard (future enhancement)
-
-Future Enhancements
-
-Email alerts
-
-Slack/Teams integration
-
-Cloud deployment
-
-Dashboard-based monitoring
-
-Automated incident report generation
-
-Maintained By
-
-Sahil Sharma
-QA Automation Engineer`bash
 python rpc_monitor.py
+
+
+
+Make sure:
+
+- Python is installed  
+- Required dependencies are installed  
+- RPC endpoint URL is correctly configured  
+- Internet connection is stable  
+
+---
+
+## Output
+
+After execution, the script provides a structured status update in the terminal.
+
+It displays:
+
+- RPC endpoint status (Healthy / Unhealthy)  
+- Response time  
+- Retry attempt count  
+- Error message (if failed)  
+
+Example:
+
+RPC Endpoint: https://example-rpc.com
+
+Status: Healthy
+Response Time: 320 ms
+
+
+If the RPC fails:
+
+
+Attempt 1 Failed
+Retrying in 2 minutes...
+
+Attempt 2 Failed
+Retrying in 2 minutes...
+
+Attempt 3 Failed
+Status: Unhealthy
+
+
+---
+
+## Business Risk Covered
+
+- Prevents unnoticed RPC downtime  
+- Reduces transaction failures  
+- Protects blockchain-based application stability  
+- Ensures service reliability  
+
+---
+
+## ROI
+
+- Reduces infrastructure monitoring cost  
+- Minimizes service outage impact  
+- Enables faster issue detection  
+- Improves system uptime  
+
+---
+
+## Stability Level
+
+Current Stability: High
+
+The script performs reliably for standard public and private RPC endpoints.
+
+Performance depends on network latency and endpoint responsiveness.
+
+---
+
+## Security Note
+
+- Avoid exposing private RPC endpoints in public repositories  
+- Do not store sensitive URLs in public documentation  
+- Use environment variables for configuration if required  
+- Ensure secure infrastructure access controls  
+
+---
+
+## Limitations
+
+- No real-time alert system (terminal-based monitoring)  
+- Does not auto-switch to backup RPC  
+- No dashboard or logging persistence  
+- Internet dependent  
+
+---
+
+## Future Enhancements
+
+- Email / Telegram alert integration  
+- Slack notification support  
+- Automatic failover to backup RPC  
+- Logging to file or database  
+- Dashboard-based monitoring interface  
+
+---
+
+## Maintained By
+
+Sahil  
+Blockchain Infrastructure Developer  
