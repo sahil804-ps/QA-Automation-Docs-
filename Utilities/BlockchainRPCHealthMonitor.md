@@ -100,5 +100,54 @@ All monitored endpoints are public RPC or API endpoints.
 
 Run from CLI:
 
-```bash
+``
+
+
+Business Risk Covered
+
+Prevents unnoticed RPC downtime
+
+Detects block synchronization halts immediately
+
+Reduces delayed incident reporting
+
+Improves infrastructure reliability
+
+ROI (Return on Investment)
+
+Manual effort per day: ~30–45 minutes
+Projects monitored: 10+
+Estimated monthly time saved: 15+ hours
+
+Additionally reduces risk of delayed outage detection.
+
+Stability Level
+
+Highly stable for long-duration execution.
+Designed for continuous background monitoring.
+
+Limitations
+
+Runs locally (not cloud-based)
+
+Requires system to remain active
+
+No centralized logging dashboard (future enhancement)
+
+Future Enhancements
+
+Email alerts
+
+Slack/Teams integration
+
+Cloud deployment
+
+Dashboard-based monitoring
+
+Automated incident report generation
+
+Maintained By
+
+Sahil Sharma
+QA Automation Engineer`bash
 python rpc_monitor.py
