@@ -79,3 +79,94 @@ Run from CLI:
 
 ```bash
 python ai_test_executor.py
+
+
+
+## Output
+
+After execution, the script provides a structured summary in the terminal.
+
+It displays:
+
+- Total number of test cases executed
+- Number of passed test cases
+- Number of failed test cases
+- Execution status for each test case
+
+Example:
+
+Total Test Cases: 10  
+Passed: 8  
+Failed: 2  
+Execution Completed
+
+If a test case fails, the script highlights the failed step and displays the related error message.
+
+
+## Business Risk Covered
+
+This tool reduces manual testing dependency and minimizes human error in repetitive QA tasks.
+
+It ensures:
+
+- Faster regression testing
+- Reduced production defects
+- Improved release confidence
+- Early bug detection
+
+## ROI
+
+The AI-Powered Test Case Executor significantly reduces QA execution time.
+
+Benefits include:
+
+- Faster test automation setup
+- Reduced manual testing cost
+- Increased release cycle speed
+- Higher test coverage with minimal effort
+
+
+## Stability Level
+
+Current stability level: Moderate
+
+The script performs reliably for structured web applications.
+
+However, highly dynamic UI elements or unexpected DOM changes may require selector refinement.
+
+
+
+## Security Note
+
+The script uses an OpenAI API key for processing test case instructions.
+
+Important considerations:
+
+- API keys should never be hardcoded in public repositories
+- Store API keys using environment variables
+- Avoid exposing sensitive project URLs in public documentation
+
+
+## Limitations
+
+- Requires stable internet connection
+- Dependent on GPT response quality
+- Dynamic UI elements may require additional handling
+- No advanced reporting dashboard (currently terminal-based output)
+
+
+## Future Enhancements
+
+Planned improvements include:
+
+- Screenshot capture on failure
+- HTML or JSON report generation
+- CI/CD integration support
+- Parallel test execution
+- Smarter DOM interaction handling using AI context memory
+
+
+## Maintained By
+
+Sahil  
+AI Automation Developer  
