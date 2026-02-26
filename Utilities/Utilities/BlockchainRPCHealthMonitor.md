@@ -1,37 +1,42 @@
-
 # Blockchain RPC Health Monitor
 
 ## Overview
 
-A Python-based continuous monitoring script designed to track the health status of multiple blockchain projects.  
-The script validates RPC availability, block synchronization status, and P2P transaction functionality in real time.
+Blockchain RPC Health Monitor is a Python-based continuous monitoring tool designed to track the operational health of multiple blockchain projects.
 
-It runs continuously via CLI and provides an audible alert (beep sound) when any monitored service becomes unavailable or unstable.
+It verifies:
+
+- RPC endpoint availability  
+- Block synchronization progress  
+- API responsiveness  
+- P2P transaction functionality  
+
+The script runs continuously via CLI and triggers an audible alert (beep sound) if any monitored service becomes unavailable.
 
 ---
 
 ## Module
 
-Utilities / Blockchain Monitoring
+Utilities / Blockchain Infrastructure Monitoring
 
 ---
 
 ## Problem Statement
 
-As a QA engineer, daily manual verification was required for:
+As a QA engineer, daily manual verification was required for multiple blockchain projects to ensure:
 
-- RPC endpoint availability
-- Block syncing status
-- P2P transaction flow
-- API responsiveness
+- RPC endpoints were responding
+- Blocks were syncing correctly
+- APIs were functional
+- Transactions were being processed
 
-This process had to be repeated every morning across multiple projects, consuming significant time and risking delayed detection of outages.
+This repetitive process consumed significant time and risked delayed detection of infrastructure failures.
 
 ---
 
 ## Purpose
 
-To automate continuous monitoring of blockchain infrastructure and provide instant alerts in case of service disruption.
+To automate real-time monitoring of blockchain infrastructure and instantly alert when any service disruption occurs.
 
 ---
 
@@ -40,8 +45,8 @@ To automate continuous monitoring of blockchain infrastructure and provide insta
 - Python
 - CLI Execution
 - RPC API Calls
-- Block Height Validation API
-- System Beep Alert Mechanism
+- Block Height Validation APIs
+- Local Audible Alert System
 
 ---
 
@@ -57,28 +62,43 @@ To automate continuous monitoring of blockchain infrastructure and provide insta
 ## Technical Flow
 
 1. Load predefined RPC and API endpoints.
-2. Send periodic health-check requests.
+2. Send health-check requests.
 3. Validate:
    - RPC response status
-   - Latest block height increment
+   - Latest block height progression
    - API responsiveness
-4. If validation fails:
+4. If a failure is detected:
+   - Retry up to 3 times
+   - Wait 2 minutes between each retry
+5. If all 3 retries fail:
    - Trigger audible beep alert
-   - Identify affected project
-5. Continue monitoring in loop (24/7 execution).
+   - Log affected project name
+6. Continue monitoring loop.
 
 ---
 
-## Test Coverage
+## Retry Mechanism
 
-- RPC availability check
-- Block sync progression check
-- API status validation
-- Failure detection logic
-- Continuous runtime monitoring
+The script includes built-in retry handling to prevent false failure alerts.
+
+- Maximum Retries: 3  
+- Retry Interval: 2 minutes  
+- Alert Trigger Condition: After all retries fail  
+
+This ensures temporary network fluctuations do not generate false alarms.
+
+---
+
+## Authentication
+
+No login or authentication is required.  
+All monitored endpoints are public RPC or API endpoints.
 
 ---
 
 ## Execution Guide
 
 Run from CLI:
+
+```bash
+python rpc_monitor.py
