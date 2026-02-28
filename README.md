@@ -1,5 +1,7 @@
 # Automation & Resilience Engineering Portfolio
 
+> Production-Grade Automation | Chaos Engineering | Performance Validation | Infrastructure Resilience
+
 ## Overview
 
 This repository represents a collection of advanced automation, performance engineering, API validation, and chaos engineering platforms built for real-world blockchain and Web2 production systems.
