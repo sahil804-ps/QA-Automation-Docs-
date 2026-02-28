@@ -1,294 +1,194 @@
+# 🧠 AI Evaluation Framework (v2)
 
-🧰 AI Evaluation Framework (v2)
-1️⃣ Overview
+## Overview
 
-AI Evaluation Framework is a production-grade AI QA system designed to validate Large Language Model outputs using:
+AI Evaluation Framework is a Python-based AI Quality Assurance toolkit designed to validate Large Language Model (LLM) responses across multiple AI providers.
 
-Semantic consistency validation
+The framework evaluates model outputs using:
 
-Hallucination risk detection
+- Semantic consistency validation  
+- Hallucination risk detection  
+- Confidence scoring  
+- Multi-model agreement analysis  
+- Prompt drift tracking  
 
-Confidence scoring
+It supports GPT, Gemini, Claude, Llama and other LLM providers and generates structured QA reports in CLI, JSON, and HTML formats.
 
-Multi-model agreement index
+---
 
-Regression drift tracking
+## Problem Statement
 
-It enables structured AI output validation across GPT, Gemini, Claude, Llama, and other models.
+Large Language Models are:
 
-2️⃣ Problem Statement
+- Non-deterministic  
+- Context-sensitive  
+- Probabilistic  
+- Prone to hallucinations  
+- Susceptible to quality drift over time  
 
-Traditional API testing validates deterministic responses.
+Traditional QA methods cannot reliably validate LLM outputs.
 
-LLMs are:
+This framework introduces structured, measurable AI output validation.
 
-Non-deterministic
+---
 
-Context-sensitive
+## Purpose
 
-Probabilistic
+- Validate AI response reliability  
+- Detect hallucination risks early  
+- Measure model agreement across providers  
+- Track regression and drift in outputs  
+- Enable CI/CD-based AI testing  
+- Improve AI product stability  
 
-Drift-prone
+---
 
-This framework solves:
+## Technical Stack
 
-Model disagreement
+- Python  
+- OpenAI API  
+- Google Gemini API  
+- Anthropic Claude API  
+- Scikit-learn (TF-IDF & Cosine Similarity)  
+- NumPy  
+- Docker  
+- GitHub Actions  
 
-Undetected hallucinations
+---
 
-Regression instability
+## How It Works
 
-Silent quality degradation
+1. User provides a prompt (single or batch).
+2. The system routes the prompt to selected AI models.
+3. Responses are collected via a shared engine.
+4. Consistency engine compares responses.
+5. Hallucination engine scans risky patterns.
+6. Confidence engine scores response quality.
+7. Agreement index is calculated.
+8. Final verdict is generated (PASS / WARN / FAIL).
+9. Reports are exported in CLI, JSON, and HTML format.
 
-3️⃣ System Architecture
+---
 
-(Insert Mermaid diagram here)
+## Input Example
 
-Then explain layers:
+Example prompt:
 
-CLI Layer
+What is gravity and how does it work?
 
-Model Router
+Batch input example (`prompts.json`):
 
-Shared Engine
+```json
+[
+  { "prompt": "Explain blockchain in simple terms." },
+  { "prompt": "What causes inflation?" }
+]
 
-Validation Layer
 
-Reporting Layer
+Execution Guide
+Interactive Mode
 
-4️⃣ Core Validation Engines
-🔁 Consistency Engine
+python 01_Response_Validator/interactive.py --ais gpt gemini
 
-Uses TF-IDF cosine similarity:
+Batch Regression Testing
+python 03_Regression_Tester/regression_tester.py --batch prompts.json
 
-𝑐
-𝑜
-𝑠
-(
-𝜃
-)
-=
-𝐴
-⋅
-𝐵
-∥
-𝐴
-∥
-∥
-𝐵
-∥
-cos(θ)=
-∥A∥∥B∥
-A⋅B
-	​
+Docker Execution
+docker-compose up
 
+Requirements
 
-Purpose:
+Python 3.8+
 
-Detect semantic divergence
+Installed dependencies (pip install -r requirements.txt)
 
-Identify unstable model outputs
+API keys configured in .env
 
-Threshold: Configurable (default 0.75)
+Active internet connection
 
-🚨 Hallucination Risk Engine
+Output
 
-Pattern categories:
+After execution, the framework provides a structured QA summary including:
 
-Overconfidence
+Total prompts tested
 
-Suspicious numeric fabrication
+PASS / WARN / FAIL count
 
-Hedged uncertainty imbalance
-
-Risk Formula:
-
-𝑅
-𝑖
-𝑠
-𝑘
-𝑆
-𝑐
-𝑜
-𝑟
-𝑒
-=
-2
-(
-𝑂
-)
-+
-3
-(
-𝑁
-)
-+
-1
-(
-𝐻
-)
-RiskScore=2(O)+3(N)+1(H)
-
-Where:
-O = Overconfidence matches
-N = Suspicious numeric patterns
-H = Hedge phrases
-
-📊 Confidence Scoring Engine
-
-Weighted scoring model:
-
-𝐶
-𝑜
-𝑛
-𝑓
-𝑖
-𝑑
-𝑒
-𝑛
-𝑐
-𝑒
-=
-𝑤
-1
-𝐿
-+
-𝑤
-2
-𝑆
-+
-𝑤
-3
-𝐶
-+
-𝑤
-4
-𝐻
-+
-𝑤
-5
-𝐶
-𝑜
-𝑚
-𝑝
-Confidence=w1L+w2S+w3C+w4H+w5Comp
-
-Dimensions:
-
-Length
-
-Structure
-
-Clarity
-
-Hedging
-
-Completeness
-
-🎯 Model Agreement Index
-
-Consensus calculation:
-
-𝐴
-𝑔
-𝑟
-𝑒
-𝑒
-𝑚
-𝑒
-𝑛
-𝑡
-=
-∑
-𝑆
-𝑖
-𝑚
-𝑖
-𝑙
-𝑎
-𝑟
-𝑖
-𝑡
-𝑦
-𝑝
-𝑎
-𝑖
-𝑟
-𝑠
-𝑃
-𝑎
-𝑖
-𝑟
-𝑠
-Agreement=
-Pairs
-∑Similarity
-pairs
-	​
-
-	​
-
-
-Low agreement = unstable domain
-High agreement = strong convergence
-
-5️⃣ Regression Testing Model
-
-Batch prompt execution
-
-Baseline comparison
-
-Drift detection
-
-Exit code integration for CI/CD
-
-Exit Codes:
-
-Code	Meaning
-0	PASS
-1	WARN
-2	FAIL
-6️⃣ Observability & Reporting
-
-CLI rich output
-
-JSON structured reports
-
-HTML dashboard
-
-CI/CD ready
-
-Dockerized execution
-
-7️⃣ Engineering Impact
-
-This framework enables:
-
-AI regression control
-
-Hallucination detection at scale
-
-Multi-model benchmarking
-
-AI reliability scoring
-
-Enterprise AI QA readiness
-
-8️⃣ Use Cases
-
-AI product validation
-
-Prompt engineering evaluation
-
-Enterprise LLM rollout testing
-
-AI safety benchmarking
-
-Model comparison research
-
-9️⃣ Future Roadmap (v3)
-
-Embedding-based semantic engine
+Consistency score
+
+Hallucination risk level
+
+Confidence score
+
+Model agreement index
+
+Example:
+
+Total Prompts: 5  
+PASS: 3  
+WARN: 1  
+FAIL: 1  
+Execution Completed
+
+
+If hallucination risk is detected, flagged sentences are displayed.
+
+If responses are inconsistent, similarity scores are shown.
+
+Business Risk Covered
+
+Detects hallucinated claims
+
+Identifies unstable AI behavior
+
+Prevents silent regression in production
+
+Improves AI deployment confidence
+
+Supports enterprise AI governance
+
+ROI
+
+Reduces manual AI validation effort
+
+Prevents production AI failures
+
+Enables scalable AI regression testing
+
+Improves AI product trust
+
+Accelerates release cycles
+
+Stability Level
+
+Current Stability: High (v2)
+
+The framework performs reliably for structured prompts and multi-model comparisons.
+Highly creative prompts may naturally show higher variance between models.
+
+Security Note
+
+Never hardcode API keys
+
+Use environment variables (.env)
+
+Do not expose private endpoints
+
+Avoid logging sensitive prompt data
+
+Limitations
+
+Dependent on API availability
+
+TF-IDF based similarity (embedding comparison not yet implemented)
+
+Pattern-based hallucination detection
+
+No distributed execution support
+
+Future Enhancements
+
+Embedding-based semantic comparison
 
 Fact-check API integration
 
@@ -296,38 +196,12 @@ Named entity verification
 
 Drift visualization dashboard
 
-SaaS deployment model
+Parallel execution engine
 
-🚀 Important Improvement
+SaaS deployment version
 
-Abhi tera repo folder view clean hai.
+Maintained By
 
-Next step:
-
-Add:
-
-Architecture.png
-
-Sample_Report.png
-
-Drift_Comparison.png
-
-Visual = credibility boost.
-
-💎 Final Strategy Advice
-
-Tera main README:
-Keep high-level.
-
-Har folder ke andar:
-Dedicated professional documentation file.
-
-Ye GitHub structure banega:
-
-AI-Scripts/
-   AI-Evaluation-Framework.md
-API/
-   API-RampUp-Load-Tester.md
-Blockchain/
-   RPC-Health-Monitor.md
-...
+Sahil
+AI QA Engineer | LLM Evaluation Specialist
+Automation & Resilience Architect
