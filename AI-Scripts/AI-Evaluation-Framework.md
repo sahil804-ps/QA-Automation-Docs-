@@ -83,125 +83,133 @@ Batch input example (`prompts.json`):
   { "prompt": "Explain blockchain in simple terms." },
   { "prompt": "What causes inflation?" }
 ]
+```
 
+---
 
-Execution Guide
-Interactive Mode
+## Execution Guide
 
+### Interactive Mode
+
+```bash
 python 01_Response_Validator/interactive.py --ais gpt gemini
+```
 
-Batch Regression Testing
+### Batch Regression Testing
+
+```bash
 python 03_Regression_Tester/regression_tester.py --batch prompts.json
+```
 
-Docker Execution
+### Docker Execution
+
+```bash
 docker-compose up
+```
 
-Requirements
+---
 
-Python 3.8+
+## Requirements
 
-Installed dependencies (pip install -r requirements.txt)
+- Python 3.8+
+- Install dependencies:
 
-API keys configured in .env
+```bash
+pip install -r requirements.txt
+```
 
-Active internet connection
+- API keys configured in `.env`
+- Active internet connection
 
-Output
+---
+
+## Output
 
 After execution, the framework provides a structured QA summary including:
 
-Total prompts tested
-
-PASS / WARN / FAIL count
-
-Consistency score
-
-Hallucination risk level
-
-Confidence score
-
-Model agreement index
+- Total prompts tested  
+- PASS / WARN / FAIL count  
+- Consistency score  
+- Hallucination risk level  
+- Confidence score  
+- Model agreement index  
 
 Example:
 
-Total Prompts: 5  
-PASS: 3  
-WARN: 1  
-FAIL: 1  
+```
+Total Prompts: 5
+PASS: 3
+WARN: 1
+FAIL: 1
 Execution Completed
-
+```
 
 If hallucination risk is detected, flagged sentences are displayed.
 
 If responses are inconsistent, similarity scores are shown.
 
-Business Risk Covered
+---
 
-Detects hallucinated claims
+## Business Risk Covered
 
-Identifies unstable AI behavior
+- Detects hallucinated claims  
+- Identifies unstable AI behavior  
+- Prevents silent regression in production  
+- Improves AI deployment confidence  
+- Supports enterprise AI governance  
 
-Prevents silent regression in production
+---
 
-Improves AI deployment confidence
+## ROI
 
-Supports enterprise AI governance
+- Reduces manual AI validation effort  
+- Prevents production AI failures  
+- Enables scalable AI regression testing  
+- Improves AI product trust  
+- Accelerates release cycles  
 
-ROI
+---
 
-Reduces manual AI validation effort
-
-Prevents production AI failures
-
-Enables scalable AI regression testing
-
-Improves AI product trust
-
-Accelerates release cycles
-
-Stability Level
+## Stability Level
 
 Current Stability: High (v2)
 
-The framework performs reliably for structured prompts and multi-model comparisons.
+The framework performs reliably for structured prompts and multi-model comparisons.  
 Highly creative prompts may naturally show higher variance between models.
 
-Security Note
+---
 
-Never hardcode API keys
+## Security Note
 
-Use environment variables (.env)
+- Never hardcode API keys  
+- Use environment variables (`.env`)  
+- Do not expose private endpoints  
+- Avoid logging sensitive prompt data  
 
-Do not expose private endpoints
+---
 
-Avoid logging sensitive prompt data
+## Limitations
 
-Limitations
+- Dependent on API availability  
+- TF-IDF based similarity (embedding comparison not yet implemented)  
+- Pattern-based hallucination detection  
+- No distributed execution support  
 
-Dependent on API availability
+---
 
-TF-IDF based similarity (embedding comparison not yet implemented)
+## Future Enhancements
 
-Pattern-based hallucination detection
+- Embedding-based semantic comparison  
+- Fact-check API integration  
+- Named entity verification  
+- Drift visualization dashboard  
+- Parallel execution engine  
+- SaaS deployment version  
 
-No distributed execution support
+---
 
-Future Enhancements
+## Maintained By
 
-Embedding-based semantic comparison
-
-Fact-check API integration
-
-Named entity verification
-
-Drift visualization dashboard
-
-Parallel execution engine
-
-SaaS deployment version
-
-Maintained By
-
-Sahil
-AI QA Engineer | LLM Evaluation Specialist
+Sahil  
+AI QA Engineer | LLM Evaluation Specialist  
 Automation & Resilience Architect
