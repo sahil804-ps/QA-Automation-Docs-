@@ -1,93 +1,60 @@
-# Automation & Resilience Engineering Portfolio
+# 🚀 Automation & Resilience Engineering Portfolio
 
 > Production-Grade Automation | Chaos Engineering | Performance Validation | Infrastructure Resilience
 
-## Overview
-
-This repository represents a collection of advanced automation, performance engineering, API validation, and chaos engineering platforms built for real-world blockchain and Web2 production systems.
-
-The projects inside this portfolio focus on:
-
-- Multi-project API automation
-- RPC validation & regression testing
-- Load and ramp-up performance testing
-- Role-based Web2 user journey automation
-- Real-time monitoring dashboards
-- Google Chat alert integrations
-- Chaos engineering & infrastructure resilience validation
-
-Each system is designed to simulate real-world production scenarios and validate system behavior under both normal and failure conditions.
+![Python](https://img.shields.io/badge/Python-Advanced-blue)
+![Automation](https://img.shields.io/badge/Automation-Enterprise-green)
+![Chaos Engineering](https://img.shields.io/badge/Chaos-Enabled-red)
+![Architecture](https://img.shields.io/badge/Architecture-Modular-orange)
+![Focus](https://img.shields.io/badge/Focus-Resilience%20Engineering-purple)
 
 ---
 
-## Engineering Philosophy
+## 📌 Overview
 
-The goal of these systems is not just to test functionality — but to validate:
+This repository represents a collection of advanced automation, performance engineering, API validation, and chaos engineering platforms built for real-world blockchain and Web2 production systems.
+
+These systems are designed not just to validate functionality — but to simulate real production conditions including load spikes, RPC failures, infrastructure shutdowns, and recovery validation.
+
+The goal is simple:
+
+**Build systems that do not just pass tests — but survive failures.**
+
+---
+
+## 🛠 Tech Stack
+
+- Python
+- Selenium
+- K6 (Performance Testing)
+- YAML Configuration
+- Docker
+- SSH-Based Infrastructure Control
+- JSON-RPC
+- Google Chat Webhooks
+- Linux Server Automation
+- CI/CD-Ready Execution Model
+
+---
+
+## 🎯 Engineering Philosophy
+
+Traditional QA validates correctness.
+
+This portfolio validates:
 
 - Stability under load  
 - Infrastructure resilience  
 - Failure recovery behavior  
 - Role-based access correctness  
-- API consistency across multiple projects  
-- Production-level operational visibility  
+- API consistency across projects  
+- Operational observability  
 
-This portfolio reflects an automation-first and resilience-focused engineering approach.
-
----
-
-## Core Capabilities Demonstrated
-
-- API Functional Automation  
-- Multi-Project Test Orchestration  
-- RPC Health Monitoring  
-- Historical Regression Validation  
-- Ramp-Up Load Testing  
-- K6 Integration  
-- Chaos Engineering (Application + Infrastructure Level)  
-- SSH-Based Infrastructure Control  
-- Real-Time Execution Dashboards  
-- Structured Reporting  
-- Project-Specific Alerting Systems  
+This is automation-first, resilience-focused engineering.
 
 ---
 
-## Project Categories
-
-The repository includes the following categories:
-
-1. AI-Based Automation
-2. Blockchain Infrastructure Monitoring
-3. Multi-Project API Test Orchestration
-4. Performance & Load Engineering
-5. Web2 Role-Based User Flow Automation
-6. UI Design Validation Automation
-7. Chaos Engineering & Infrastructure Resilience Testing
-
-Each project is documented separately with architecture, flow, technical stack, and output examples.
-
----
-
-## Designed For
-
-- Blockchain Explorers
-- Web2 Applications
-- Multi-Environment API Systems
-- Infrastructure Validation Teams
-- QA Automation Teams
-- DevOps & SRE Teams
-
----
-
-## Maintained By
-
-Sahil  
-Automation Architect | Resilience Engineer | Infrastructure QA Specialist
-
-
-
----
-
-# Project Portfolio
+# 📦 Project Portfolio
 
 Below is a structured breakdown of all automation and resilience platforms included in this repository.
 
@@ -100,6 +67,7 @@ Natural language driven automation engine that converts plain English test cases
 **Key Capabilities:**
 - NLP-based test interpretation  
 - Selenium execution  
+- Dynamic step generation  
 - Pass/Fail reporting  
 - End-to-end validation  
 
@@ -107,7 +75,7 @@ Natural language driven automation engine that converts plain English test cases
 
 ## 2️⃣ Blockchain RPC Health Monitor
 
-Automated RPC endpoint monitoring tool that validates availability, response time, and retry handling.
+Automated RPC endpoint monitoring tool validating availability, response time, retry handling, and health scoring.
 
 **Key Capabilities:**
 - JSON-RPC validation  
@@ -138,12 +106,13 @@ Controlled performance testing engine that gradually increases API traffic to de
 - Concurrent execution  
 - Capacity benchmarking  
 - Response time measurement  
+- Error threshold detection  
 
 ---
 
 ## 5️⃣ Figma vs Explorer UI Comparison Tool
 
-Automated design validation system that compares live UI implementation against Figma design files and detects visual inconsistencies.
+Automated design validation system comparing live UI against Figma designs and detecting visual inconsistencies.
 
 **Key Capabilities:**
 - Screenshot comparison  
@@ -155,7 +124,7 @@ Automated design validation system that compares live UI implementation against 
 
 ## 6️⃣ Multi-Project API Test & Load Orchestrator
 
-Centralized multi-project automation framework that runs functional tests and K6 load testing across multiple explorer projects simultaneously.
+Centralized automation framework executing functional tests and K6 load testing across multiple projects simultaneously.
 
 **Key Capabilities:**
 - YAML-based configuration  
@@ -168,10 +137,10 @@ Centralized multi-project automation framework that runs functional tests and K6
 
 ## 7️⃣ Web2 User Flow Automation & Chaos Framework
 
-Full user journey automation system for role-based Web2 applications with integrated chaos engineering module.
+Full user journey automation system with integrated chaos engineering module.
 
 **Key Capabilities:**
-- Signup → Login → Purchase → Logout flow automation  
+- Signup → Login → Purchase → Logout flow  
 - Role-based access validation  
 - Latency injection  
 - Chaos mode reporting  
@@ -181,361 +150,149 @@ Full user journey automation system for role-based Web2 applications with integr
 
 ## 8️⃣ Explorer Resilience & Chaos Engineering Platform
 
-Infrastructure-level chaos platform that intentionally disrupts RPC nodes, instances, ports, and regions to validate system failover and recovery behavior.
+Infrastructure-level chaos platform intentionally disrupting RPC nodes, instances, ports, and regions to validate failover and recovery.
 
 **Key Capabilities:**
 - SSH-based infrastructure control  
 - RPC shutdown simulation  
 - Instance termination testing  
 - Sync validation after recovery  
-- Post-chaos retesting  
+- Post-chaos revalidation  
 - Infrastructure resilience scoring  
 
 ---
 
+# 🏗 Architecture & Execution Model
 
----
+The portfolio follows a layered automation and resilience architecture.
 
-# Architecture & Execution Model
+### Layer 1: Configuration Layer
+- YAML-based project config
+- Environment isolation
+- Secure credential handling
 
-This portfolio follows a layered automation and resilience architecture designed for real-world production systems.
+### Layer 2: Functional Automation Layer
+- API validation
+- RPC verification
+- Business logic validation
 
-The systems are built using a modular and extensible execution model.
+### Layer 3: Performance & Load Layer
+- K6 integration
+- Ramp-up execution
+- Capacity benchmarking
+- Latency measurement
 
----
-
-## Layered Architecture Approach
-
-### 1️⃣ Configuration Layer
-
-- YAML-based project configuration  
-- Environment variable isolation  
-- API endpoint mapping  
-- Infrastructure node mapping  
-- Secure credential handling  
-
-This ensures that adding a new project requires configuration only — not core code changes.
-
----
-
-### 2️⃣ Functional Automation Layer
-
-Responsible for:
-
-- API validation  
-- RPC verification  
-- Response structure checks  
-- Status code validation  
-- Business logic flow validation  
-
-This layer ensures correctness under normal operating conditions.
-
----
-
-### 3️⃣ Performance & Load Layer
-
-Integrated ramp-up and stress testing mechanisms:
-
-- K6-based load injection  
-- Concurrent request handling  
-- Capacity measurement  
-- Error threshold detection  
-
-This layer validates scalability and performance boundaries.
-
----
-
-### 4️⃣ Chaos Engineering Layer
-
-Controlled failure simulation at two levels:
+### Layer 4: Chaos Engineering Layer
 
 **Application-Level Chaos**
-- Latency injection  
-- Timeout simulation  
-- API degradation testing  
+- Latency injection
+- Timeout simulation
+- API degradation testing
 
 **Infrastructure-Level Chaos**
-- RPC shutdown  
-- Instance termination  
-- Port blocking  
-- Region-level disruption  
+- RPC shutdown
+- Instance termination
+- Port blocking
+- Region-level disruption
 
-This layer validates resilience, failover capability, and recovery mechanisms.
+### Layer 5: Recovery & Revalidation Layer
+- Service restart validation
+- RPC sync verification
+- Post-failure API re-testing
+- Stability confirmation
 
----
-
-### 5️⃣ Recovery & Revalidation Layer
-
-After chaos injection:
-
-- Services are restarted  
-- APIs are re-tested  
-- RPC syncing is verified  
-- Load stability is re-evaluated  
-- Recovery integrity is validated  
-
-This ensures the system is not only stable — but self-recoverable.
+### Layer 6: Observability & Alerting Layer
+- Real-time dashboards
+- Pass/Fail counters
+- Response tracking
+- Structured reports
+- Google Chat alerts
 
 ---
 
-### 6️⃣ Observability & Alerting Layer
+# 🔄 Execution Flow Model
 
-Each platform includes:
-
-- Real-time execution dashboard  
-- Live pass/fail counters  
-- Response time tracking  
-- Structured report generation  
-- Google Chat alert integration  
-- Project-specific notification groups  
-
-This provides operational transparency.
-
----
-
-## Execution Flow Model
-
-A typical full-system execution follows:
+A typical execution follows:
 
 1. Load project configuration  
 2. Execute functional API tests  
 3. Validate RPC health  
 4. Apply ramp-up load  
 5. Trigger chaos events (if enabled)  
-6. Monitor failures and degradation  
+6. Monitor degradation  
 7. Restart affected components  
 8. Re-validate system behavior  
-9. Generate reports  
-10. Send structured alerts  
+9. Generate structured reports  
+10. Send alert notifications  
 
 ---
 
-## Design Principles
+# 📊 Sample Metrics Output
 
-The systems are designed using the following engineering principles:
-
-- Automation First  
-- Configuration Driven  
-- Failure-Aware Architecture  
-- Production-Realistic Simulation  
-- Parallel Project Validation  
-- Measurable Stability Metrics  
-- Clear Observability  
+```
+APIs Tested: 120
+Passed: 118
+Failed: 2
+Average Response Time: 240ms
+P95 Latency: 410ms
+Max Sustainable Load: 1800 RPS
+Recovery Time After RPC Shutdown: 42 seconds
+Resilience Score: 8.7/10
+```
 
 ---
 
-## Scalability Model
+# 🎯 What Makes This Portfolio Different?
 
-The architecture supports:
+Most automation portfolios test functionality.
+
+This portfolio validates:
+
+- Infrastructure failure recovery  
+- RPC node behavior under shutdown  
+- Region-level disruption handling  
+- Load degradation thresholds  
+- Chaos-driven revalidation  
+- Measurable resilience scoring  
+
+This reflects production-focused engineering, not surface-level automation.
+
+---
+
+# 🚀 Scalability Model
 
 - Multi-project parallel execution  
 - Config-driven onboarding  
 - Load testing expansion  
-- Multi-region infrastructure validation  
+- Multi-region validation  
 - CI/CD integration capability  
 
 ---
 
-## Target Engineering Domains
+# 🧠 Engineering Depth Demonstrated
 
-This architecture aligns with:
-
-- QA Automation Engineering  
-- DevOps Validation  
-- Site Reliability Engineering (SRE)  
-- Infrastructure Resilience Testing  
-- Performance Engineering  
-- Blockchain Infrastructure Validation  
-
----
-
-
----
-
-# Metrics, Impact & Engineering Depth
-
-This portfolio is focused on measurable engineering validation rather than surface-level automation.
-
-Each system is built to generate actionable metrics and operational visibility.
-
----
-
-## Functional Validation Metrics
-
-Across projects, the systems measure:
-
-- Total APIs Tested  
-- Passed / Failed / Skipped Counts  
-- HTTP Status Code Distribution  
-- Response Structure Integrity  
-- Business Logic Validation Accuracy  
-- Role-Based Access Verification  
-
-These metrics ensure functional correctness before production deployment.
-
----
-
-## Performance & Load Metrics
-
-Integrated ramp-up and K6 testing provides:
-
-- Concurrent Virtual Users  
-- Average Response Time  
-- P95 / P99 Latency Tracking  
-- Error Percentage  
-- Maximum Sustainable Load  
-- System Degradation Threshold  
-
-These metrics define system scalability boundaries.
-
----
-
-## Resilience & Chaos Metrics
-
-Chaos engineering layers measure:
-
-- Failure Detection Time  
-- Recovery Time  
-- RPC Re-Sync Duration  
-- Timeout Frequency  
-- Service Restoration Success Rate  
-- Post-Recovery Stability  
-
-This provides quantifiable resilience validation.
-
----
-
-## Infrastructure-Level Observability
-
-When infrastructure chaos is triggered:
-
-- Affected Node Identification  
-- Region-Level Impact  
-- Instance Downtime Duration  
-- Port/Network Failure Response  
-- Recovery Confirmation Status  
-- Sync Integrity Verification  
-
-This validates real-world disaster scenarios.
-
----
-
-## Operational Impact
-
-The combined platforms help achieve:
-
-- Reduced production incidents  
-- Early regression detection  
-- Infrastructure stress validation  
-- Measurable resilience scoring  
-- Faster deployment confidence  
-- Parallel multi-project validation  
-
----
-
-## Engineering Depth Demonstrated
-
-This portfolio reflects experience in:
-
-- End-to-End Automation Design  
-- Multi-System Orchestration  
+- End-to-End Automation Architecture  
 - Infrastructure Control via SSH  
-- Real-Time Monitoring Systems  
-- Failure Injection & Chaos Strategy  
+- Multi-System Orchestration  
+- Chaos Strategy Implementation  
 - Performance Benchmarking  
-- Distributed Project Validation  
-- Alerting & Observability Integration  
+- Observability & Alert Integration  
+- Distributed Validation Systems  
 
 ---
 
-## Automation Coverage Scope
-
-The systems collectively validate:
-
-- Application Layer  
-- API Layer  
-- RPC Layer  
-- Infrastructure Layer  
-- Load & Stress Behavior  
-- Recovery & Sync Mechanisms  
-
-This ensures full-stack validation from user flow to node-level infrastructure.
-
----
-
-## Real-World Simulation Focus
-
-All systems are built to simulate real production scenarios including:
-
-- High traffic conditions  
-- Infrastructure outages  
-- Regional disruptions  
-- Service degradation  
-- Role-based permission failures  
-- Sync inconsistencies  
-
-The objective is not just correctness — but operational reliability.
-
----
----
-
-# Professional Positioning & Engineering Vision
-
-This portfolio represents a practical implementation of automation-driven resilience engineering.
-
-The systems built here go beyond traditional QA automation and focus on production-grade validation, performance engineering, and infrastructure fault tolerance.
-
----
-
-## Engineering Identity
-
-Primary Focus Areas:
-
-- Automation Architecture  
-- Infrastructure Resilience Testing  
-- Chaos Engineering  
-- Performance & Load Engineering  
-- Multi-Project API Orchestration  
-- Real-Time Observability Systems  
-
-The objective is to build systems that do not just pass tests — but survive real-world failures.
-
----
-
-## Approach to Engineering
-
-Every project in this repository follows:
-
-- Configuration-driven scalability  
-- Modular and extensible design  
-- Production-realistic simulation  
-- Failure-aware validation  
-- Measurable performance metrics  
-- Clear observability & reporting  
-
-This approach ensures engineering decisions are based on data, not assumptions.
-
----
-
-## Future Roadmap
-
-Planned enhancements across platforms:
+# 🔮 Future Roadmap
 
 - CI/CD pipeline integrations  
-- Distributed load execution clusters  
+- Distributed load clusters  
 - Historical metrics storage  
 - Automated resilience scoring  
-- Multi-region failover benchmarking  
-- Container-level chaos (Kubernetes)  
+- Kubernetes-level chaos  
 - Cloud-native observability integration  
-
-The long-term vision is to evolve these systems into a unified automation and resilience platform.
 
 ---
 
-## Intended Engineering Domains
-
-This work aligns strongly with:
+# 🎯 Target Engineering Domains
 
 - Senior QA Automation Engineering  
 - Site Reliability Engineering (SRE)  
@@ -546,28 +303,13 @@ This work aligns strongly with:
 
 ---
 
-## Portfolio Objective
-
-The goal of this repository is to demonstrate:
-
-- System-level thinking  
-- Infrastructure awareness  
-- Automation scalability  
-- Failure simulation capability  
-- Recovery validation expertise  
-- Production readiness mindset  
-
----
-
-## Contact
+# 👨‍💻 Maintained By
 
 Sahil  
-Automation Architect | Resilience Engineer  
-
-For collaboration, architecture discussions, or infrastructure validation initiatives, feel free to connect.
+Automation Architect | Resilience Engineer | Infrastructure QA Specialist  
 
 ---
 
+## 📄 License
 
-
-
+For demonstration and professional portfolio purposes.
